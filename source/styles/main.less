@@ -1,0 +1,253 @@
+@import "./config/mapas.less";
+
+@breakpointDesktop: ~"(min-width: 1024px)";
+@breakpointMobile: ~"(max-width: 767px)";
+@breakpointTablet: ~"(min-width: 768px) and (max-width: 1023px)";
+
+.marginBottom8 {
+    margin-bottom: 8px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    color: #colors[textColor];
+}
+
+li {
+    list-style: none;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0px auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header {
+    padding-bottom: 24px;
+
+    .profile-avatar {
+        display: block;
+        margin: 0px auto 24px;
+        border-radius: 50%;
+        object-fit: cover;
+        width: 110px;
+        height: 110px;
+    }
+
+    .profile-bio {
+        text-align: center;
+        
+        &-name {
+            font-size: 20px;
+            .marginBottom8();
+        }
+        
+        &-subtitle {
+            font-size: 18px;
+            .marginBottom8();
+        }
+
+        &-description {
+            font-size: 18px;
+            opacity: 0.7;
+        }
+    }
+}
+
+.social-links {
+    display: flex;
+    max-width: 240px;
+    width: 100%;
+    margin: 0px auto;
+
+    li {
+        img {
+            width: 32px;
+        }
+    }
+}
+
+.projects-list {
+    margin-top: 32px;
+
+    &-item {
+        a {
+            text-decoration: none;
+            background-color: #colors[buttonColor];
+            font-size: 20px;
+            display: block;
+            padding: 24px 20px;
+            margin-bottom: 16px;
+            text-align: center;
+            color: #colors[textColor];
+            font-weight: bold;
+            border-radius: 30px;
+            border: 2px solid #colors[buttonColor];
+        }
+    }
+}
+
+@media @breakpointDesktop {
+    body {
+        background: linear-gradient(to bottom right, #0097e6, #192a56);
+    }
+
+    .social-links {
+        justify-content: space-between;
+
+        li {
+            img {
+                width: 40px;
+                transition: all ease 0.3s;
+
+                &:hover {
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+
+    .projects-list {
+        &-item {
+            a {
+                transition: all ease 0.3s;
+            
+                &:hover {
+                    color: #colors[buttonColor];
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+
+@media @breakpointMobile {
+    body {
+        background-color: #colors[backgroundColor];
+    }
+
+    .container {
+        max-width: 70%;
+        
+        .social-links {
+            justify-content: space-between;
+    
+            li {
+                img {
+                    width: 40px;
+                    transition: all ease 0.15s;
+                
+                    &:active {
+                        transform: scale(1.3);
+                    }
+                }
+            }
+        }
+    
+        .projects-list {
+            &-item {
+                a {
+                    font-size: 20px;
+                    transition: all ease 0.15s;
+    
+                    &:active {
+                        color: #colors[buttonColor];
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    
+        .profile-avatar {
+            margin: 800px auto 24px;
+            width: 120px;
+            height: 120px;
+        }
+    
+        .profile-bio {
+            &-name {
+                font-size: 28px;
+            }
+    
+            &-subtitle {
+                font-size: 25px;
+            }
+    
+            &-description {
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media @breakpointTablet {
+    body {
+        background: linear-gradient(to bottom right, #0097e6, #192a56);
+    }
+    
+    .container {
+        max-width: 80%;
+
+        .social-links {
+            max-width: 490px;
+    
+            li {
+                margin-left: 50px;
+                img {
+                    width: 60px;
+                    transition: all ease 0.15s;
+                
+                    &:active {
+                        transform: scale(1.3);
+                    }
+                }
+            }
+        }
+    
+        .projects-list {
+            &-item {
+                a {
+                    font-size: 28px;
+                    transition: all ease 0.15s;
+                
+                    &:active {
+                        color: #colors[buttonColor];
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    
+        .profile-avatar {
+            margin: 0px auto 24px;
+            width: 170px;
+            height: 170px;
+        }
+    
+        .profile-bio {
+            &-name {
+                font-size: 34px;
+            }
+    
+            &-subtitle {
+                font-size: 32px;
+            }
+    
+            &-description {
+                font-size: 32px;
+            }
+        }
+    }
+}
